@@ -1,6 +1,14 @@
 module.exports = function toReadable(number) {
     let str = number.toString();
-    console.log(str);
+    //console.log(str);
+
+    let zeroes = "";
+
+    if (str.length < 3) {
+        zeroes = "0".repeat(3 - (str.length % 3));
+    }
+
+    str = zeroes + str;
 
     let hund = hundred(str);
     let dozens = "";
