@@ -2,13 +2,6 @@ module.exports = function toReadable(number) {
     let str = number.toString();
     console.log(str);
 
-    //let zeros = s3 - (str.length % 3);
-
-    //берем первые 3 символа строки
-    //делаем все необходимое
-    //проверяем сколько символов в исходной строке
-
-    // for (let i = 0; i < str.length; i+3) {
     let hund = hundred(str);
     let dozens = "";
     let un = "";
@@ -17,18 +10,7 @@ module.exports = function toReadable(number) {
 
     console.log(`${hund} ${dozens} ${un}`);
     let result = `${hund} ${dozens} ${un}`;
-    // }
 
-    let prefix = "";
-    if (str.length <= 3) {
-        prefix = "";
-    } else if (str.length <= 6) {
-        prefix = " thousand"; //add thousand
-    } else if (str.length <= 9) {
-        prefix = " millions"; // add millions
-    } else if (str.length <= 12) {
-        prefix = " billions"; //add billions
-    }
     return result;
 };
 
@@ -136,7 +118,7 @@ function dec(dec, unit) {
 }
 
 function units(str) {
-    if (+str[1] == 1) {
+    if (+str[2] == 0) {
         return "";
     } else {
         return digit(+str[2]);
