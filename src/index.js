@@ -26,7 +26,7 @@ function digit(x) {
             return "two";
             break;
         case 3:
-            return "thre";
+            return "three";
             break;
         case 4:
             return "four";
