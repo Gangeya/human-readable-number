@@ -17,9 +17,11 @@ module.exports = function toReadable(number) {
     un = units(str);
 
     console.log(`${hund} ${dozens} ${un}`);
-    let result = `${hund} ${dozens} ${un}`;
+    let result = `${hund}${dozens}${un}`;
 
-    return result.trim();
+    if (number == 0) {
+        return "zero";
+    } else return result.trim();
 };
 
 function digit(x) {
@@ -28,85 +30,85 @@ function digit(x) {
             return "zero";
             break;
         case 1:
-            return "one";
+            return " one";
             break;
         case 2:
-            return "two";
+            return " two";
             break;
         case 3:
-            return "three";
+            return " three";
             break;
         case 4:
-            return "four";
+            return " four";
             break;
         case 5:
-            return "five";
+            return " five";
             break;
         case 6:
-            return "six";
+            return " six";
             break;
         case 7:
-            return "seven";
+            return " seven";
             break;
         case 8:
-            return "eigth";
+            return " eight";
             break;
         case 9:
-            return "nine";
+            return " nine";
             break;
         case 10:
-            return "ten";
+            return " ten";
             break;
         case 11:
-            return "eleven";
+            return " eleven";
             break;
         case 12:
-            return "twelve";
+            return " twelve";
             break;
         case 13:
-            return "thirteen";
+            return " thirteen";
             break;
         case 14:
-            return "fourteen";
+            return " fourteen";
             break;
         case 15:
-            return "fifteen";
+            return " fifteen";
             break;
         case 16:
-            return "sixteen";
+            return " sixteen";
             break;
         case 17:
-            return "seventeen";
+            return " seventeen";
             break;
         case 18:
-            return "eighteen";
+            return " eighteen";
             break;
         case 19:
-            return "nineteen";
+            return " nineteen";
             break;
         case 20:
-            return "twenty";
+            return " twenty";
             break;
         case 30:
-            return "thirty";
+            return " thirty";
             break;
         case 40:
-            return "fourty";
+            return " forty";
             break;
         case 50:
-            return "fifty";
+            return " fifty";
             break;
         case 60:
-            return "sixty";
+            return " sixty";
             break;
         case 70:
-            return "seventy";
+            return " seventy";
             break;
         case 80:
-            return "eighty";
+            return " eighty";
             break;
         case 90:
-            return "ninety";
+            return " ninety";
             break;
     }
 }
@@ -126,7 +128,7 @@ function dec(dec, unit) {
 }
 
 function units(str) {
-    if (+str[2] == 0) {
+    if (+str[2] == 0 || +str[1] == 1) {
         return "";
     } else {
         return digit(+str[2]);
