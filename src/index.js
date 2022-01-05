@@ -62,7 +62,7 @@ function digit(x) {
             return "fourteen";
             break;
         case 15:
-            return "fiveteen";
+            return "fifteen";
             break;
         case 16:
             return "sixteen";
@@ -86,7 +86,7 @@ function digit(x) {
             return "fourty";
             break;
         case 50:
-            return "fivety";
+            return "fifty";
             break;
         case 60:
             return "sixty";
