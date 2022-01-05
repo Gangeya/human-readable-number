@@ -19,7 +19,7 @@ module.exports = function toReadable(number) {
     console.log(`${hund} ${dozens} ${un}`);
     let result = `${hund} ${dozens} ${un}`;
 
-    return result;
+    return result.trim();
 };
 
 function digit(x) {
